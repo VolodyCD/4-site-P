@@ -13,12 +13,13 @@ body {
    height: 100%;
 }
 
-.wrapper{
+.wrapper {
    min-height: 100%;
    display: flex;
    flex-direction: column;
 }
 
+/* приклепляемо фуутер внизу */
 a {
    text-decoration: none;
    color: inherit;
@@ -30,12 +31,14 @@ li {
 
 .header {
    background-color: #151515;
-   /* background-image: url(../images/header.jpg);
-   height: 100vh; */
 }
 
 .header__main {
-/* background-color: transparent; */
+   background-color: transparent;
+   position: absolute;
+   z-index: 5;
+   left: 0;
+   right: 0;
 }
 
 .container {
@@ -75,13 +78,13 @@ body {
 }
 
 
-.footer{
+.footer {
    background-color: #151515;
    padding: 50px 0 32px;
    color: #fff;
 }
 
-.footer__menu{
+.footer__menu {
    display: flex;
    justify-content: space-around;
    margin-bottom: 50px;
@@ -91,37 +94,107 @@ body {
    max-width: 250px;
 }
 
-.footer__menu--item + .footer__menu--item {
-padding-top: 20px;
+.footer__menu--item+.footer__menu--item {
+   padding-top: 20px;
 }
 
-.footer__menu--title{
-font-size: 24px;
-font-weight: 700;
-padding-bottom: 20px;
-margin: 0;
+.footer__menu--title {
+   font-size: 24px;
+   font-weight: 700;
+   padding-bottom: 20px;
+   margin: 0;
 }
 
-.app__links{
+.app__links {
    display: flex;
    justify-content: center;
    gap: 40px;
    margin-bottom: 50px;
 }
 
-.footer__copy{
+.footer__copy {
    max-width: 806px;
    margin: 0 auto 30px;
    text-align: center;
 }
 
-.copy__nav--list{
+.copy__nav--list {
    display: flex;
    justify-content: center;
    gap: 40px;
 }
 
-.main{
+.main {
    flex-grow: 1;
 }
 
+/* щоб меин максимально розтягнувся */
+
+.top {
+   color: #fff;
+   text-align: center;
+   padding-top: 250px;
+   padding-bottom: 50px;
+   position: absolute;
+   z-index: 5;
+   left: 0;
+   right: 0;
+
+}
+
+.title {
+   margin: 0;
+   padding-bottom: 40px;
+   font-size: 96px;
+   font-weight: 700;
+}
+
+.top__link {
+   background-color: #151515;
+   padding: 23px;
+   max-width: 430px;
+   width: 100%;
+   display: inline-block;
+   /* виглядає як строкова застосовуємо стилі як для блочного */
+   text-transform: uppercase;
+   font-size: 36px;
+   font-weight: 700;
+}
+
+.swiper::after {
+   content: '';
+   background: rgba(21, 21, 21, .3);
+   position: absolute;
+   z-index: 5 ;
+   left: 0;
+   right: 0;
+   bottom: 0;
+   top: 0;
+}
+
+
+.swiper-slide {
+   background-repeat: no-repeat;
+   background-size: cover;
+   background-position: center;
+   height: 100vh;
+}
+
+.swiper-pagination-bullet {
+   width: 120px;
+   height: 3px;
+   background-color: #151515;
+   border-radius: 0;
+   opacity: 1;
+   margin: 0 15px !important;
+}
+
+.swiper-pagination-bullets.swiper-pagination-horizontal {
+   bottom: 30px;
+}
+
+.swiper-pagination-bullet-active {
+   height: 6px;
+   background-color: #fff;
+
+}
